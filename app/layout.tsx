@@ -1,12 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Inter } from "next/font/google";
 import { EvmProvider } from "@/components/providers/EvmProvider";
 import { ToastProvider } from "@/components/ui/Toast";
 import { app } from "@/lib/app-config";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"], display: "swap" });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" });
+const ui = Inter({ variable: "--font-ui", subsets: ["latin"], display: "swap" });
+const code = IBM_Plex_Mono({
+  variable: "--font-code",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: `${app.name} — ${app.tagline}`,
@@ -14,22 +19,11 @@ export const metadata: Metadata = {
   openGraph: { title: app.name, description: app.tagline, type: "website", url: app.url },
 };
 
-/** `width=device-width` plus a floor on zoom. Pinch-zoom stays available; nothing is locked out. */
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  themeColor: "#0A0A0A",
-};
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0C0D0F" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
-      // The project's accent, written once at the root. Every component reads `var(--accent)`, so
-      // this is the only place a palette change has to happen.
-      style={{ ["--accent" as string]: app.accent }}
-    >
+    <html lang="en" className={`${ui.variable} ${code.variable} h-full`}>
       <body className="min-h-full antialiased">
         <EvmProvider>
           <ToastProvider>{children}</ToastProvider>
