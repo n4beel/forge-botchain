@@ -36,15 +36,10 @@ export default function PageShell({ children, nav = [], title, description }: Pa
         }}
       >
         <Link href="/" className="flex items-center gap-2 no-underline flex-shrink-0">
-          <span
-            aria-hidden="true"
-            style={{
-              width: "14px",
-              height: "14px",
-              background: "var(--accent)",
-              clipPath: "polygon(50% 0, 100% 100%, 0 100%)",
-            }}
-          />
+          <svg aria-hidden="true" viewBox="0 0 100 100" style={{ width: "16px", height: "16px" }}>
+            <path d="M50 14 L84 78 H16 Z" fill="var(--accent)" />
+            <path d="M50 40 L66 70 H34 Z" fill="var(--bg-base)" />
+          </svg>
           <span className="mono text-[14px] font-semibold tracking-[-0.02em]">{app.name}</span>
         </Link>
 
