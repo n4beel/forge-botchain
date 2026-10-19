@@ -11,11 +11,15 @@ Deploy a fixed-supply ERC-20 on BOT Chain in one click. No Solidity, no compiler
 | Contract | [`0x64abe50A02A688e0e67662d13eF3740330E8cE01`](https://scan.bohr.life/address/0x64abe50A02A688e0e67662d13eF3740330E8cE01) · source verified |
 | Deploy block | 27061684 |
 
-### BOT Chain mainnet (677) — not yet deployed
+### BOT Chain mainnet (677) — live
 
-Mainnet is the only network the listing bar accepts. The site currently targets Bohr, and the
-network badge reads **Testnet** in amber so a screenshot from it can never be mistaken for
-listing proof.
+| | |
+|---|---|
+| Contract | [`0x64abe50A02A688e0e67662d13eF3740330E8cE01`](https://scan.botchain.ai/address/0x64abe50A02A688e0e67662d13eF3740330E8cE01) · source verified |
+| Deploy block | 27267090 |
+
+The site targets mainnet. The Bohr deployment above stays up and stays documented, so the
+contract can still be exercised somewhere mistakes are free.
 
 ---
 
